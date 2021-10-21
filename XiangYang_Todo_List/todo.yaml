@@ -6,10 +6,13 @@ todo:
   - id: 3
     content: todo3
 doing:
+  - id: 4
+    content: doing4
   - id: 5
     content: doing5
   - id: 6
     content: doing6
+
 done:
   - id: 7
     content: done7
@@ -17,5 +20,3 @@ done:
     content: done8
   - id: 9
     content: done9
-  - id: 4
-    content: doing4

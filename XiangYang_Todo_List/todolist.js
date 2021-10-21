@@ -1,7 +1,7 @@
 /*
  * @Author: xiangyang
  * @Date: 2021-10-20 15:22:50
- * @LastEditTime: 2021-10-21 10:11:18
+ * @LastEditTime: 2021-10-21 17:46:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \XiangYang_Todo_List\todolist.js
@@ -36,42 +36,55 @@ const args = process.argv.slice(2)
 const argsplus = require('minimist')(process.argv.slice(2));
 if(args[0]=='ls'){
     
-    if(argsplus['status']=='done'){
-        console.log(todojson.done);
+    if(argsplus['status']=='todo'){
+        console.log("---------------todo---------------");
+        todojson.todo.forEach(element => {
+            console.log(element.id+'                            '+element.content);
+        });
     }
     if(argsplus['status']=='doing'){
-        console.log(todojson.doing);
+        console.log("---------------doing---------------");
+        todojson.doing.forEach(element => {
+            console.log(element.id+'                            '+element.content);
+        });
     }
-    if(argsplus['status']=='todo'){
-        console.log(todojson.todo);
+    if(argsplus['status']=='done'){
+        console.log("---------------done---------------");
+        todojson.done.forEach(element => {
+            console.log(element.id+'                            '+element.content);
+        });
     }
     if(argsplus['status']==null){
-        console.log(todojson);  
+        print();
     }
 }
+else if(args[0]=='help'){
+    
+    help();
+}
 //任务标签转移
-if(args[0]=='done'){
+else if(args[0]=='done'){
     let b = args[1];
     b.toString();
     done(b);
     write(todojson);
-    console.log(todojson);
+    print();
 }
-if(args[0]=='todo'){
+else if(args[0]=='todo'){
     let b = args[1];
     b.toString();
     todo(b);
     write(todojson);
-    console.log(todojson);
+    print();
 }
-if(args[0]=='doing'){
+else if(args[0]=='doing'){
     let b = args[1];
     b.toString();
     doing(b);
     write(todojson);
-    console.log(todojson);
+    print();
 }
-if(args[0]=='delete'){
+else if(args[0]=='delete'){
     let b =args[1];
     b.toString();
     todojson.todo.forEach((element,index,arr) => {
@@ -90,30 +103,20 @@ if(args[0]=='delete'){
         }
     });
     write(todojson);
-    console.log(todojson);
+    print();
 }
-if(args[0]=='add'){
+else if(args[0]=='add'){
     let addstatus = args[1];
     let addid = args[2];
     let content = args[3];
     
     add(addstatus,addid,content);
     write(todojson);
-    console.log(todojson);
+    print();
 }
-if(args[0]=='help'){
-    let help =[
-        "<status> = todo / doing / done                              ",
-        "node todolist.js add <status> <id> <content>   添加任务",
-        "node todolist.js ls                            列出所有任务",
-        "node todolist.js ls --status=<status>          列出指定状态任务",
-        "node todolist.js <status> <id>                 将该id对应的任务置为对应状态",
-        "node todolist.js delete <id>                   删除该id的任务",
-        "node todolist.js help                          帮助面板",
-    ]
-    help.forEach(element => {
-        console.log(element);
-    });
+else{
+    console.log("输入有误");
+    help();
 }
 
 function done(b){
@@ -190,4 +193,35 @@ function add(addstatus,addid,content1){
         let newobject = {id:parseInt(addid),content:content1};
         todojson.done.push(newobject);
     }
+}
+
+function help(){
+    let help =[
+        "node todolist.js <method> [options...]                     ",
+        "<status> = todo / doing / done                              ",
+        "node todolist.js add <status> <id> <content>   添加任务",
+        "node todolist.js ls                            列出所有任务",
+        "node todolist.js ls --status=<status>          列出指定状态任务",
+        "node todolist.js <status> <id>                 将该id对应的任务置为对应状态",
+        "node todolist.js delete <id>                   删除该id的任务",
+        "node todolist.js help                          帮助面板",
+    ]
+    help.forEach(element => {
+        console.log(element);
+    });
+}
+
+function print(){
+    console.log("---------------todo---------------");
+    todojson.todo.forEach(element => {
+        console.log(element.id+'                            '+element.content);
+    });
+    console.log("---------------doing---------------");
+    todojson.doing.forEach(element => {
+        console.log(element.id+'                            '+element.content);
+    });
+    console.log("---------------done---------------");
+    todojson.done.forEach(element => {
+        console.log(element.id+'                            '+element.content);
+    });
 }
