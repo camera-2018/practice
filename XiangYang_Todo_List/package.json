@@ -1,0 +1,12 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "todolist made by xiangyang",
+  "main": "todolist.js",
+  "author": "camera-2018",
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "js-yaml": "^4.1.0"
+  }
+}

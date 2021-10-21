@@ -1,0 +1,21 @@
+todo:
+  - id: 1
+    content: todo1
+  - id: 2
+    content: todo2
+  - id: 3
+    content: todo3
+doing:
+  - id: 5
+    content: doing5
+  - id: 6
+    content: doing6
+done:
+  - id: 7
+    content: done7
+  - id: 8
+    content: done8
+  - id: 9
+    content: done9
+  - id: 4
+    content: doing4
