@@ -20,11 +20,16 @@
 
 
 # 更新记录
-- 1.1版本
+- **1.1版本**
 - 修了一堆bug
-
-- 1.2版本 
-- 增加了炫彩代码 **史诗级更新 <font color=red>R</font><font color=green>G</font><font color=blue>B</font>增加50%性能**
+<br>
+- **1.2版本**
+- 增加了炫彩代码 **史诗级更新 RGB增加50%性能** （ANSI转义序列 和 选择图形再现（SGR）参数）
 - 炫彩的使用方法 https://www.cnblogs.com/xiaoqiangink/p/12718524.html
-- 使用了字符串模板 template string
+- 使用了字符串模板 template literals
 - 增加使用了 === 严格判断 （不会用 会爆炸）
+<br>
+- **1.3版本**
+- 版本号 version 命令 add
+- 多色字符串 chalk 库使用
+- 修复了template literals 通过 + 连接字符串的问题

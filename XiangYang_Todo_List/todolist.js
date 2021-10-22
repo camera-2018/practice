@@ -1,18 +1,16 @@
 /*
  * @Author: xiangyang
  * @Date: 2021-10-20 15:22:50
- * @LastEditTime: 2021-10-22 15:09:52
+ * @LastEditTime: 2021-10-22 16:58:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \XiangYang_Todo_List\todolist.js
  */
-const green = "\033[32m";     
-const yellow = "\033[33m";
-const azure = "\033[36m";
-const red = "\033[31m";
-const fontfoot = "\033[0m";
+let version = ["Version 1.3"];
+
 const fs = require('fs');
 const yaml = require('js-yaml');
+const chalk = require('chalk');
 
 function write(data){                   //写入
     try {
@@ -40,7 +38,7 @@ let todojson = read();
 function done(b){
     todojson.done.forEach((element,index,arr) => {     //done到done
         if(element.id==b){
-            console.log(`${azure+"Already Done!"+fontfoot}`)
+            console.log(`${chalk.bold.blueBright("Already Done!")}`)
         }
     });
     todojson.todo.forEach((element,index,arr) => {     //todo到done
@@ -60,7 +58,7 @@ function done(b){
 function todo(b){
     todojson.todo.forEach((element,index,arr) => {     //todo到todo
         if(element.id==b){
-            console.log(`${azure+"Already Todo!"+fontfoot}`)
+            console.log(`${chalk.bold.blueBright("Already Todo!")}`)
         }
     });
     todojson.done.forEach((element,index,arr) => {     //done到todo
@@ -80,7 +78,7 @@ function todo(b){
 function doing(b){
     todojson.doing.forEach((element,index,arr) => {     //doing到doing
         if(element.id==b){
-            console.log(`${azure+"Already Doing!"+fontfoot}`)
+            console.log(`${chalk.bold.blueBright("Already Doing!")}`)
         }
     });
     todojson.todo.forEach((element,index,arr) => {     //todo到doing
@@ -117,6 +115,7 @@ function help(){
     let help =[
         "node todolist.js <method> [options...]                     ",
         "<status> = todo / doing / done                              ",
+        "node todolist.js version                       查看当前版本",
         "node todolist.js add <status> <id> <content>   添加任务",
         "node todolist.js ls                            列出所有任务",
         "node todolist.js ls --status=<status>          列出指定状态任务",
@@ -125,26 +124,26 @@ function help(){
         "node todolist.js help                          帮助面板",
     ]
     help.forEach(element => {
-        console.log(`${yellow+element+fontfoot}`);
+        console.log(`${chalk.bold.yellow(element)}`);
     });
 }
 
 function printTodo(){
-    console.log(`---------------${green+"todo"+fontfoot}---------------`);
+    console.log(`---------------${chalk.bold.green("todo")}---------------`);
     todojson.todo.forEach(element => {
-        console.log(`${yellow+element.id+fontfoot}${' '.padEnd(28,' ')}${azure+element.content+fontfoot}`);
+        console.log(`${chalk.bold.yellow(element.id)}${' '.padEnd(28,' ')}${chalk.bold.blue(element.content)}`);
     });
 }
 function printDoing(){
-    console.log(`---------------${green+"doing"+fontfoot}---------------`);
+    console.log(`---------------${chalk.bold.green("doing")}---------------`);
     todojson.doing.forEach(element => {
-        console.log(`${yellow+element.id+fontfoot}${' '.padEnd(28,' ')}${azure+element.content+fontfoot}`);
+        console.log(`${chalk.bold.yellow(element.id)}${' '.padEnd(28,' ')}${chalk.bold.blue(element.content)}`);
     });
 }
 function printDone(){
-    console.log(`---------------${green+"done"+fontfoot}---------------`);
+    console.log(`---------------${chalk.bold.green("done")}---------------`);
     todojson.done.forEach(element => {
-        console.log(`${yellow+element.id+fontfoot}${' '.padEnd(28,' ')}${azure+element.content+fontfoot}`);
+        console.log(`${chalk.bold.yellow(element.id)}${' '.padEnd(28,' ')}${chalk.bold.blue(element.content)}`);
     });
 }
 function printAll(){
@@ -169,7 +168,7 @@ if(args[0]=='ls'){
         printDone();
     }
     else{
-        console.log(`${red+'输入有误!'+fontfoot}`);
+        console.log(`${chalk.bold.red('输入有误!')}`);
     }
 }
 if(args[0]==='help'){
@@ -224,4 +223,13 @@ if(args[0]==='add'){
     printAll();
 }
 
-
+if(args[0]==='version'){
+    version.forEach(element => {
+        console.log(chalk.bold.blue(element));
+        console.log(chalk.bold.yellow(element));
+        console.log(chalk.bold.green(element));
+        console.log(chalk.bold.magenta(element));
+        console.log(chalk.bold.gray(element));
+    });
+    
+}

@@ -6,7 +6,8 @@
   "author": "camera-2018",
   "license": "MIT",
   "dependencies": {
-    "minimist": "^1.2.5",
-    "js-yaml": "^4.1.0"
+    "chalk": "^4.1.2",
+    "js-yaml": "^4.1.0",
+    "minimist": "^1.2.5"
   }
 }
