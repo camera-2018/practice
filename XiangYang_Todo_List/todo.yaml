@@ -12,7 +12,6 @@ doing:
     content: doing5
   - id: 6
     content: doing6
-
 done:
   - id: 7
     content: done7
