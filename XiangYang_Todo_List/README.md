@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-21 11:31:17
+ * @LastEditTime: 2021-10-22 17:08:16
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \pratice\XiangYang_Todo_List\README.md
+-->
 # 安装
 	npm install
 # 使用
@@ -20,16 +28,16 @@
 
 
 # 更新记录
-- **1.1版本**
+**1.1版本**
 - 修了一堆bug
-<br>
-- **1.2版本**
+
+**1.2版本**
 - 增加了炫彩代码 **史诗级更新 RGB增加50%性能** （ANSI转义序列 和 选择图形再现（SGR）参数）
 - 炫彩的使用方法 https://www.cnblogs.com/xiaoqiangink/p/12718524.html
 - 使用了字符串模板 template literals
 - 增加使用了 === 严格判断 （不会用 会爆炸）
-<br>
-- **1.3版本**
+
+**1.3版本**
 - 版本号 version 命令 add
 - 多色字符串 chalk 库使用
 - 修复了template literals 通过 + 连接字符串的问题
