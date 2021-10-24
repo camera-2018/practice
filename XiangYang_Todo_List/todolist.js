@@ -1,16 +1,21 @@
 /*
  * @Author: xiangyang
  * @Date: 2021-10-20 15:22:50
- * @LastEditTime: 2021-10-22 16:58:15
+ * @LastEditTime: 2021-10-23 22:16:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \XiangYang_Todo_List\todolist.js
  */
-let version = ["Version 1.3"];
+let version = ["Version 1.4"];
 
 const fs = require('fs');
 const yaml = require('js-yaml');
 const chalk = require('chalk');
+
+const statuslist = ['todo','doing','done'];
+const args = process.argv.slice(2)
+const argsplus = require('minimist')(process.argv.slice(2));
+
 
 function write(data){                   //写入
     try {
@@ -152,84 +157,92 @@ function printAll(){
     printDone();
 }
 //命令行控制
-const args = process.argv.slice(2)
-const argsplus = require('minimist')(process.argv.slice(2));
-if(args[0]=='ls'){
-    if(argsplus['status']==null){
+function main(args,argsplus){
+    if(args[0]=='ls'){
+        let status = argsplus['status'];
+        if(status==null){
+            printAll();
+        }
+        if(status==='todo'){
+            printTodo();
+        }
+        if(status==='doing'){
+            printDoing();
+        }
+        if(status==='done'){
+            printDone();
+        }
+        for(let index = 0; index <= statuslist.length; index++) {
+            if(status!=statuslist[index]&&status!=null){
+                console.log(`${chalk.bold.red('输入有误!')}`);
+                break;
+            }
+            
+        }
+        
+    }
+    if(args[0]==='help'){
+        help();
+    }
+    //任务标签转移
+    if(args[0]==='done'){
+        let b = args[1];
+        done(b);
+        write(todojson);
         printAll();
     }
-    else if(argsplus['status']==='todo'){
-        printTodo();
+    if(args[0]==='todo'){
+        let b = args[1];
+        todo(b);
+        write(todojson);
+        printAll();
     }
-    else if(argsplus['status']==='doing'){
-        printDoing();
+    if(args[0]==='doing'){
+        let b = args[1];
+        doing(b);
+        write(todojson);
+        printAll();
     }
-    else if(argsplus['status']==='done'){
-        printDone();
+    if(args[0]==='delete'){
+        let b =args[1];
+        todojson.todo.forEach((element,index,arr) => {
+            if(element.id==b){
+                arr.splice(index,1);
+            }
+        });
+        todojson.doing.forEach((element,index,arr) => {
+            if(element.id==b){
+                arr.splice(index,1);
+            }
+        });
+        todojson.done.forEach((element,index,arr) => {
+            if(element.id==b){
+                arr.splice(index,1);
+            }
+        });
+        write(todojson);
+        printAll();
     }
-    else{
-        console.log(`${chalk.bold.red('输入有误!')}`);
+    if(args[0]==='add'){
+        let addstatus = args[1];
+        let addid = args[2];
+        let content = args[3];
+        
+        add(addstatus,addid,content);
+        write(todojson);
+        printAll();
     }
-}
-if(args[0]==='help'){
-    help();
-}
-//任务标签转移
-if(args[0]==='done'){
-    let b = args[1];
-    done(b);
-    write(todojson);
-    printAll();
-}
-if(args[0]==='todo'){
-    let b = args[1];
-    todo(b);
-    write(todojson);
-    printAll();
-}
-if(args[0]==='doing'){
-    let b = args[1];
-    doing(b);
-    write(todojson);
-    printAll();
-}
-if(args[0]==='delete'){
-    let b =args[1];
-    todojson.todo.forEach((element,index,arr) => {
-        if(element.id==b){
-            arr.splice(index,1);
-        }
-    });
-    todojson.doing.forEach((element,index,arr) => {
-        if(element.id==b){
-            arr.splice(index,1);
-        }
-    });
-    todojson.done.forEach((element,index,arr) => {
-        if(element.id==b){
-            arr.splice(index,1);
-        }
-    });
-    write(todojson);
-    printAll();
-}
-if(args[0]==='add'){
-    let addstatus = args[1];
-    let addid = args[2];
-    let content = args[3];
     
-    add(addstatus,addid,content);
-    write(todojson);
-    printAll();
+    if(args[0]==='version'){
+        version.forEach(element => {
+            console.log(chalk.bold.blue(element));
+            console.log(chalk.bold.yellow(element));
+            console.log(chalk.bold.green(element));
+            console.log(chalk.bold.magenta(element));
+            console.log(chalk.bold.gray(element));
+        });
+        
+    }
 }
+main(args,argsplus);
 
-if(args[0]==='version'){
-    version.forEach(element => {
-        console.log(chalk.bold.blue(element));
-        console.log(chalk.bold.yellow(element));
-        console.log(chalk.bold.green(element));
-        console.log(chalk.bold.magenta(element));
-        console.log(chalk.bold.gray(element));
-    });
-    
-}
