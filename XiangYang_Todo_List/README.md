@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-10-21 11:31:17
- * @LastEditTime: 2021-10-22 17:08:16
- * @LastEditors: your name
+ * @LastEditTime: 2021-10-24 12:06:59
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \pratice\XiangYang_Todo_List\README.md
 -->
@@ -41,3 +41,7 @@
 - 版本号 version 命令 add
 - 多色字符串 chalk 库使用
 - 修复了template literals 通过 + 连接字符串的问题
+
+**1.4版本**
+- 新增报错
+- 写了主函数main
