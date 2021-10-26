@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-10-25 21:34:30
- * @LastEditTime: 2021-10-26 12:19:24
+ * @LastEditTime: 2021-10-26 15:04:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \w8school\index.html
@@ -228,5 +228,33 @@
     <footer>
         <p class="foot">w8school by camera-2018</p>
     </footer>
+
+    <script>
+        function autoPlay(){
+            play = setInterval(function(){
+                index++;
+                index>=imgs.length&&(index=0);
+                show(index);
+            },3000)
+        }
+        function show(a){
+            for (let index = 0; index < btn.length; index++) {
+                btn[index].className='';
+                btn[a].className='current';
+            }
+            for (let index = 0; index < imgs.length; index++) {
+                img[index].style.opacity=0;
+                img[a].style.opacity=1;
+            }
+        }
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].index=i;
+            btn[i].onmousover=function(){
+                show(this.index);
+                clearInterval(play);
+            }
+            
+        }
+    </script>
 </body>
 </html>
