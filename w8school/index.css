@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+
+}
+body{
+    grid-template-areas: "head head head"
+                         "left mid right" 
+                         "left mid right" 
+                         "foot foot foot";
+}
+li,a,button{
+    font-family: Consolas;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo{
+    cursor: pointer;
+    transition:  transform 1s;  
+    width: 358px;
+    height: 107px;
+    margin-left: 220px;
+    margin-top:30px;
+}
+
+.logo:hover{
+    transform: rotate(360deg);
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 60px;
+    margin-top: 30px
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #0088a9;
+}
+
+button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    float: right;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+
+button:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+
+
+.div{
+    display: flex;
+    justify-content: center;
+    
+
+}
+.left,.right,.mid{
+    display: flex;
+    justify-content: center;
+}
+.left{
+    height: 1000px;
+    width: 500px;
+    /* background-color: red; */
+    margin:50px 0px 0px 100px;
+}
+
+.mid{
+    height: 1000px;
+    width: 1000px;
+    /* background-color: green; */
+    margin: 20px 0px 0px 0px;
+}
+
+.right{
+    height: 1000px;
+    width: 500px;
+    /* background-color: blue; */
+    margin:50px 100px 0px 0px;
+
+}
+
+.lu li a,.mu li a,.ru li a{
+    transition: all 0.3s ease 0s;
+    margin-left: 8px;
+}
+
+.lu li a:hover,.mu li a:hover,.ru li a:hover{
+
+    background-color: #0088a9;
+
+}
+
+/* .lu li:hover,.mu li:hover,.ru li:hover{
+    background-color: #0088a9;
+} */
+
+.lu li,.ru li{
+    padding: 10px 0px;
+    list-style: none;
+}
+.mu li{
+    padding: 50px 0px;
+    list-style: none;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 1500px;
+    margin-bottom: 20px;
+}
+.foot{
+    font-family: Consolas;
+    color: #edf0f1;
+    text-align: center;
+    transition:  transform 0.1s;
+}
+.foot:hover{
+    color: aqua;
+    transform: rotate(720deg);
+}
+h2{
+    margin: 0px;
+    font-family: Consolas;
+    color: #edf0f1;
+}
+p{
+    padding: 20px 0px;
+}
