@@ -1,0 +1,119 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-26 15:03:26
+ * @LastEditTime: 2021-10-26 16:30:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \pratice\w8school\banmer.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 点击轮播 -->
+<div class="slide" style="margin-top: 80px;">
+
+    <input type="radio" name="sildeInput" value="0" id="sildeInput1" checked hidden />
+    <label for="sildeInput1">1</label>
+  
+    <input type="radio" name="sildeInput" value="1" id="sildeInput2" hidden />
+    <label for="sildeInput2">2</label>
+  
+    <input type="radio" name="sildeInput" value="1" id="sildeInput3" hidden />
+    <label for="sildeInput3">3</label>
+  
+  
+    <ul>
+      <li><img src="images/1.png"></li>
+      <li><img src="images/2.png"></li>
+      <li><img src="images/3.png"></li>
+    </ul>
+</div>
+    <style>
+        .slide {
+        margin: auto;
+        text-align: center;
+        font-family: Arial;
+        color: #FFF;
+        overflow: hidden;
+        height: 810px;
+        width: 1080px;
+
+        }
+
+        .slide ul {
+        margin: 10px 0;
+        padding: 0;
+        width: calc(600px * 3); 
+        transition: all 0.5s;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        }
+
+        
+
+        .slide input[name="sildeInput"] {
+        display: none;
+        }
+
+        .slide label[for^="sildeInput"] {
+        position: absolute;
+        top: 860px;
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+        line-height: 20px;
+        color: #FFF;
+        background: rgba(0, 255, 106, 0.9);
+        cursor: pointer;
+        border-radius: 50%;
+        }
+
+        .slide label[for="sildeInput1"] {
+        left: 23%;
+        }
+
+        .slide label[for="sildeInput2"] {
+        left: 28%;
+        }
+
+        .slide label[for="sildeInput3"] {
+        left: 33%;
+        }
+
+        #sildeInput1:checked~ul {
+        margin-left: 0;
+        }
+
+        #sildeInput2:checked~ul {
+        margin-left: -1080px;
+        }
+
+        #sildeInput3:checked~ul {
+        margin-left: -2160px;
+        }
+
+        #sildeInput1:checked~label[for="sildeInput1"] {
+            color: #000;
+            background: #fff;
+        }
+
+        #sildeInput2:checked~label[for="sildeInput2"] {
+            color: #000;
+            background: #fff;
+        }
+
+        #sildeInput3:checked~label[for="sildeInput3"] {
+            color: #000;
+            background: #fff;
+        }
+
+    </style>
+</body>
+</html>
