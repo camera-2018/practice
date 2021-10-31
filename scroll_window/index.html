@@ -1,0 +1,69 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-30 14:49:52
+ * @LastEditTime: 2021-10-31 11:34:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \scroll_window\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css scroll snap</title>
+    <style>
+        main::-webkit-scrollbar{width:0;}
+        body::-webkit-scrollbar{width:0;}
+        body{
+            overflow: hidden;
+        }
+        h1{
+            font-size:1.5rem;
+            font-weight:bold;
+            text-align:center;
+            margin:0;
+            padding-top:20px;
+            height: 60px;
+            top: 0;
+            position: sticky;
+            background-color: whitesmoke;
+        }
+        main{
+            
+            /* 横向移动需要设置display: flex; */
+            /* display: flex; */
+            /* 横向移动需要更改为scroll-snap-type: x mandatory; */
+            scroll-snap-type: y mandatory;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        section{
+            /* 横向移动需要设置flex-shrink:0 */
+            /* flex-shrink: 0; */
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: center;
+        }
+        div{
+            text-align: center;
+            font-size: 50px;
+            padding-top: 50vh;
+        }
+        /* section:nth-child(4){
+            height: 250vh;
+        } */
+    </style>
+</head>
+<body>
+    <main>
+        <h1>标题</h1>
+        <section style="background-color: aqua;"><div>1</div></section>
+        <section style="background-color: aquamarine;"><div>2</div></section>
+        <section style="background-color: yellowgreen;"><div>3</div></section>
+        <section style="background-color: salmon;"><div>4</div></section>
+    </main>
+</body>
+</html>
