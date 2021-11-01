@@ -1,0 +1,194 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-31 16:43:36
+ * @LastEditTime: 2021-11-01 14:58:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \hduhelpdemo\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        footer{
+            text-align: center;
+            font-size: 0.4rem;
+            background-color: rgba(46, 153, 230,0.5);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-radius: 10px;
+            z-index: -1;
+
+        }
+        header{
+            width: 100%;
+            height: 194px;
+            /* background-color: aqua; */
+            
+            background: linear-gradient(
+                135deg,
+                rgba(121, 205, 235,0.85), 
+                rgba(46, 153, 230,0.9)
+            ); 
+
+            border-radius: 0 0 24px 24px;
+        }
+        header div{
+            width: 100%;
+            /* height: 50px; */
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            color: #f5f5f5;
+        }
+        header div:nth-child(1){
+            padding-top: 75px;
+            padding-left: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+
+            
+        }
+        header div:nth-child(2){
+            padding-top: 2px;
+            font-size: 0.7rem;
+            padding-left: 20px;
+            letter-spacing: 3px;
+            font-weight: thin;
+        }
+        header div:nth-child(3){
+            margin-top: 30px;
+            margin-left: 17px;
+            padding-left: 20px;
+            font-size: 1px;
+            color: rgba(46, 153, 230,0.9);
+            display: block;
+            width: 70px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #f5f5f5;
+        }
+        nav{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        nav div{
+            /* width: 100%; */
+            /* height: 50px; */
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            margin-left: 6px;
+        }
+        nav div span{
+            background-color: rgba(46, 153, 230,0.9);
+        }
+        main{
+            /* background-color: #f5f5f5; */
+            display: flex;
+            flex-direction: column;
+            /* border-radius: 9px; */
+            background-color: #fff;
+
+        }
+        .text{
+            font-size: 0.3rem;
+            /* width: 1vw; */
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 16px 0;
+        }
+        .text:nth-of-type(even){
+            /* justify-self: flex-end; */
+            align-self: flex-end;
+            /* background-color: red; */
+            /* padding-left: 300px; */
+        }
+        .text span{
+            color: darkgoldenrod;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div>杭电助手</div>
+        <div>HDU HELP</div>
+        <div>继续了解</div>
+    </header>
+    <nav>
+        <div>
+            <span>&nbsp;</span>
+            <div>数据流量</div>
+        </div>
+        <div>
+            <span>&nbsp;</span>
+            <div style="font-size: 0.2rem;">DATA FLOW</div>
+        </div>
+        
+    </nav>
+    <main>
+        <section class="text">
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+            杭电助手为师生做了
+            <span>146</span>
+            个项目
+        </section>
+        <section class="text">
+            年代码量达
+            <span>30万</span>
+            行+
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+        </section>
+        <section class="text">
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+            杭电助手受到的关注量达
+            <span>55000+</span>
+        </section>
+        <section class="text">
+            微信校园卡领取量已达到
+            <span>14642</span>
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+        </section>
+        <section class="text">
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+            公众号最高阅读量已达到
+            <span>14234</span>
+        </section>
+        <section class="text">
+            月菜单点击量
+            <span>300000+</span>
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+        </section>
+        <section class="text">
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+            自助报到访问量
+            <span>62000+</span>
+            人
+        </section>
+        <section class="text">
+            累计用户
+            <span>30000+</span>
+            人
+            <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
+
+        </section>
+    </main>
+    <footer>© 杭电助手 All Rights Reserved.</footer>
+</body>
+</html>
