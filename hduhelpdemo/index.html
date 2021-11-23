@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-10-31 16:43:36
- * @LastEditTime: 2021-11-01 14:58:08
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \hduhelpdemo\index.html
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            width: fit-content;
+            /* background-color: rgba(46, 153, 230,0.5); */
+            /* height: 100vh; */
+        }
         footer{
+            background-color: rgba(46, 153, 230,0.5);
+            /* padding-bottom: 100px; */
+            /* border-radius: 10px; */
+            /* z-index: 1; */
+            position: absolute;
+            width: 300px;
+            /* height: 100px; */
+            height: 500px;
+            bottom: 0;
+        }
+        footer p{
             text-align: center;
             font-size: 0.4rem;
-            background-color: rgba(46, 153, 230,0.5);
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border-radius: 10px;
-            z-index: -1;
-
+            position: absolute;
+            bottom: 100px;
+            left: 52px; 
         }
         header{
-            width: 100%;
+            width: 300px;
             height: 194px;
             /* background-color: aqua; */
             
@@ -36,6 +41,8 @@
             ); 
 
             border-radius: 0 0 24px 24px;
+            position: relative;
+            z-index: 2;
         }
         header div{
             width: 100%;
@@ -93,8 +100,11 @@
             /* background-color: #f5f5f5; */
             display: flex;
             flex-direction: column;
-            /* border-radius: 9px; */
+            border-radius: 9px;
             background-color: #fff;
+            border-radius: 0 0 24px 24px;
+            z-index: 3;
+            position: relative;
 
         }
         .text{
@@ -136,6 +146,7 @@
         </div>
         
     </nav>
+    
     <main>
         <section class="text">
             <img src="https://s3.bmp.ovh/imgs/2021/11/318d4bd629f866d1.jpg" width="30px" height="30px">
@@ -189,6 +200,6 @@
 
         </section>
     </main>
-    <footer>© 杭电助手 All Rights Reserved.</footer>
+    <footer><p>© 杭电助手 All Rights Reserved.</p></footer>
 </body>
 </html>
