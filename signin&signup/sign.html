@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>login</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="main.js"></script>
+        
+	</head>
+	<body>
+		<div class="control">
+			<div class="item">
+				<div class="active">登录</div><div>注册</div>
+			</div>
+			<div class="content">
+				<div style="display: block;">
+					<form method="post" target="hidden">
+					<iframe name="hidden" style="display:none;"></iframe>
+					<p>用户名</p>
+					<input type="text" required placeholder="username" id="username" onKeyUp="if(this.value.length>10) this.value=this.value.substr(0,10)">
+					<p>密码</p>
+					<input type="password" required placeholder="password" id="password">
+					<br/>
+					<input type="submit" value="登录" id="login">
+					</form>
+				</div>
+				<div>
+					<form method="post" target="hidden">
+					<iframe name="hidden" style="display:none;"></iframe>
+					<p>用户名</p>
+					<input type="text" required placeholder="username" id="usernameregister" >
+					<p>邮箱</p>
+					<input type="text" required placeholder="email" id="email" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$">
+                    <p>手机号</p>
+                    <input type="text" required onkeyup="value=value.replace(/\D/g,'')" placeholder="phone" id="phone">
+                    <p>密码</p>
+					<input type="password" required placeholder="password" id="passwordregister">
+                    <p>确认密码</p>
+                    <input type="password" required placeholder="repassword" id="re-passwordregister">
+                    <p>短信验证码</p>
+					<span class="getcap">
+						<input type="text" maxlength="4" required placeholder="验证码" id="captcha" />
+						<input type="button" maxlength="4" required value="发送验证码" id="send-captcha" />
+					</span>
+					<br/>
+					<input type="submit" value="登录" id="register">
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="index.js"></script>
+</html>
+
