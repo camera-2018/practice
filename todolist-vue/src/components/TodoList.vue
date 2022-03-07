@@ -11,7 +11,7 @@ import Bar from './Bar.vue'
       <Bar />
     </a-layout-header>
     <a-layout-content class="list">
-      <a-space size="large">
+      <a-space size="large" align="start">
         <Todo />
         <Doing />
         <Done />
@@ -22,7 +22,7 @@ import Bar from './Bar.vue'
 
 <style>
 .list {
-  transform: translate(0, 15%);
+  transform: translate(0, 10%);
   display: block;
   margin: 0 auto;
 }
