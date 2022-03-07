@@ -1,0 +1,29 @@
+<script setup>
+import Todo from './Todo.vue'
+import Done from './Done.vue'
+import Doing from './Doing.vue'
+import Bar from './Bar.vue'
+</script>
+
+<template>
+  <a-layout style="height: 400px;">
+    <a-layout-header>
+      <Bar />
+    </a-layout-header>
+    <a-layout-content class="list">
+      <a-space size="large">
+        <Todo />
+        <Doing />
+        <Done />
+      </a-space>
+    </a-layout-content>
+  </a-layout>
+</template>
+
+<style>
+.list {
+  transform: translate(0, 15%);
+  display: block;
+  margin: 0 auto;
+}
+</style>
