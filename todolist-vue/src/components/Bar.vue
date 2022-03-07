@@ -3,10 +3,11 @@ import { useMainStore } from '../stores'
 import { storeToRefs } from 'pinia';
 const { inputText, todoList } = storeToRefs(useMainStore())
 const add = () => {
-  console.log(inputText.value)
-  todoList.value.push(
-    inputText.value
-  )
+  if (inputText.value.trim() !== '') {
+    todoList.value.push(
+      inputText.value
+    )
+  }
 }
 </script>
 
