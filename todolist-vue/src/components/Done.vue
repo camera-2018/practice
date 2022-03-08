@@ -1,9 +1,11 @@
 <script setup>
 import { useMainStore } from '../stores'
-import { storeToRefs } from 'pinia';
+import { storeToRefs } from 'pinia'
+import { Message } from '@arco-design/web-vue'
 const { doneList } = storeToRefs(useMainStore())
 function del(index) {
   doneList.value.splice(index, 1)
+  Message.success('删除成功')
 }
 </script>
 
@@ -15,7 +17,7 @@ function del(index) {
     <a-list-item v-for="(element, index) in doneList" :key="element">
       {{ element }}
       <template #extra>
-        <a-button type="primary" size="mini" status="danger" @click="del(index)">
+        <a-button size="mini" status="danger" @click="del(index)">
           <template #icon>
             <icon-delete />
           </template>

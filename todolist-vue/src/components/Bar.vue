@@ -14,7 +14,12 @@ const add = () => {
 <template>
   <div class="bar">
     <a-space>
-      <a-input :style="{ width: '320px' }" placeholder="创建ToDo" v-model="inputText" />
+      <a-input
+        :style="{ width: '320px' }"
+        placeholder="创建ToDo"
+        v-model="inputText"
+        @press-enter="add"
+      />
       <a-button type="primary" @click="add">添加</a-button>
     </a-space>
   </div>

@@ -68,5 +68,4 @@ const login = () => {
   display: block;
   margin: 0 auto;
 }
-
 </style>
