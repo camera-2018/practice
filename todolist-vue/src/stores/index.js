@@ -7,7 +7,8 @@ export const useMainStore = defineStore('main', {
       inputText: '',
       todoList: ['todo1', 'todo2', 'todo3'],
       doingList: ['doing1', 'doing2', 'doing3'],
-      doneList: ['done1', 'done2', 'done3']
+      doneList: ['done1', 'done2', 'done3'],
+      selectedKeys: ['1'],
     }
   },
   getters: {

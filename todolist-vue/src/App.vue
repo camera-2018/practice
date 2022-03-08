@@ -1,11 +1,14 @@
 <script setup>
+import { useMainStore } from './stores';
+import { storeToRefs } from 'pinia'
+const { selectedKeys } = storeToRefs(useMainStore())
 </script>
 
 <template>
   <a-layout style="height: 400px;">
     <a-layout-header>
       <div class="menu-demo">
-        <a-menu mode="horizontal" :default-selected-keys="['1']">
+        <a-menu mode="horizontal" :default-selected-keys="['1']" :selected-keys="selectedKeys">
           <router-link to="/">
             <a-menu-item key="0" :style="{ padding: 0, marginRight: '38px' }" disabled>
               <div

@@ -3,6 +3,13 @@ import Todo from './Todo.vue'
 import Done from './Done.vue'
 import Doing from './Doing.vue'
 import Bar from './Bar.vue'
+import { onMounted } from 'vue'
+import { useMainStore } from '../stores'
+import { storeToRefs } from 'pinia'
+const { selectedKeys } = storeToRefs(useMainStore())
+onMounted(()=>{
+  selectedKeys.value.splice(0, selectedKeys.value.length, '1')
+})
 </script>
 
 <template>

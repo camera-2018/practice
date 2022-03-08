@@ -1,4 +1,11 @@
 <script setup>
+import { onMounted } from 'vue'
+import { useMainStore } from '../stores'
+import { storeToRefs } from 'pinia'
+const { selectedKeys } = storeToRefs(useMainStore())
+onMounted(()=>{
+  selectedKeys.value.splice(0, selectedKeys.value.length, '2')
+})
 </script>
 
 <template>
