@@ -5,20 +5,15 @@ const { selectedKeys } = storeToRefs(useMainStore())
 </script>
 
 <template>
-  <a-layout style="height: 400px;">
+  <a-layout class="h-[400px]">
     <a-layout-header>
       <div class="menu-demo">
         <a-menu mode="horizontal" :default-selected-keys="['1']" :selected-keys="selectedKeys">
           <router-link to="/">
-            <a-menu-item key="0" :style="{ padding: 0, marginRight: '38px' }" disabled>
+            <a-menu-item key="0" class = 'p-0 mr-[38px]' disabled>
               <div
                 id="menu-logo"
-                :style="{
-                  width: '80px',
-                  height: '30px',
-                  borderRadius: '2px',
-                  cursor: 'text',
-                }"
+                class = 'w-80px h-30px border-Radius-2px cursor-text'
               >Todolist</div>
             </a-menu-item>
           </router-link>

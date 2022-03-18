@@ -13,7 +13,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <a-layout style="height: 400px;">
+  <a-layout class = 'h-400'>
     <a-layout-header>
       <Bar />
     </a-layout-header>
