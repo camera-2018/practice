@@ -3,7 +3,7 @@
 
 所以升级了vue3.2！
 
-Vue3.2 + Vite + Pinia + Unocss + Vuerouter
+Vue3.2 + Vite + Pinia + Unocss + Vuerouter + ElementPlus
 
 小做了个后端( Node + Express + MongoDB )，
 技术支持[@Marlene](https://github.com/MarleneJiang)
